@@ -1,0 +1,52 @@
+//1305 - Area of a Parallelogram
+
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+
+
+int main()
+{
+    double ab,bc,ca,s,abc,abcd,x1,x2,x3,y1,y2,y3,x4,y4,x,y,a,b,c,d,e,f,r,g,t,h,j,i,k,l,o,p;
+    scanf("%lf",&a);
+    for(i=1;i<=a;i++)
+    {
+        scanf("%lf%lf%lf%lf%lf%lf",&x1,&y1,&x2,&y2,&x3,&y3);
+        ab=sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)));
+        bc=sqrt(((x3-x2)*(x3-x2))+((y3-y2)*(y3-y2)));
+        ca=sqrt(((x3-x1)*(x3-x1))+((y3-y1)*(y3-y1)));
+        s=(ab+bc+ca)/2.0;
+        abc=sqrt(s*(s-ab)*(s-bc)*(s-ca));
+        abcd=2*abc;
+        x4=x1+x3-x2;
+        y4=y1+y3-y2;
+        printf("Case %.0lf: %.0lf %.0lf %.0lf\n",i,x4,y4,abcd);
+    }
+
+    return 0;
+}

@@ -1,0 +1,50 @@
+#include<cstdio>
+#include<algorithm>
+
+
+
+using namespace std;
+int i;
+const int MXN=5000000;
+int p[MXN+1];
+bool t[MXN+1];
+unsigned long long e[MXN+1];
+void euler()
+{
+    for(i=2; i<=MXN; i++)
+    {
+        if(!t[i])
+        p[++p[0]]=i,e[i]=i-1;
+        for(int j=1; j<=p[0]&&i*p[j]<=MXN; ++j)
+        {
+            t[i*p[j]]=true;
+            if(i%p[j]==0)
+            {
+                e[i*p[j]]=p[j]*e[i];
+                break;
+            }
+            else
+            {
+                e[i*p[j]]=(p[j]-1)*e[i];
+            }
+        }
+    }
+    for(i=2; i<=MXN; i++)
+        e[i]*=e[i],e[i]+=e[i-1];
+}
+int main()
+{
+    euler();
+    int T,tw;
+    scanf("%d",&T);
+
+    for(tw=1; tw<=T; tw++)
+    {
+
+        int a,b;
+        scanf("%d%d",&a,&b);
+        printf("Case %d: ",tw);
+        printf("%llu\n",e[b]-e[a-1]);
+    }
+    return 0;
+}

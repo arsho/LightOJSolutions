@@ -1,0 +1,70 @@
+//1354 - IP Checking
+
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+long long prime(long long a)
+{
+    long long sum,k,o,i,h,j;
+    h=a;
+    o=0;
+    sum=0;
+    while(a>0)
+    {
+        k=a%10;
+
+            sum+=k*pow(2,o);
+            o++;
+
+        a=a/10;
+    }
+    return sum;
+}
+int main()
+{
+    long long a,b,c,d,f,e,g,h,i,j,k,o;
+    long long d1,d2,d3,d4,d12,d22,d32,d42;
+    char c1,c2,c3,c4,c12,c22,c32,c42;
+    scanf("%lld",&a);
+    for(i=1;i<=a;i++)
+    {
+        scanf("%lld%c%lld%c%lld%c%lld%c",&d1,&c1,&d2,&c2,&d3,&c3,&d4,&c4);
+        scanf("%lld%c%lld%c%lld%c%lld%c",&d12,&c12,&d22,&c22,&d32,&c32,&d42,&c42);
+        b=prime(d12);
+        c=prime(d22);
+        d=prime(d32);
+        e=prime(d42);
+        if((b==d1)&&(c==d2)&&(d==d3)&&(e==d4))
+        printf("Case %lld: Yes\n",i);
+        else
+
+        printf("Case %lld: No\n",i);
+
+    }
+    return 0;
+}

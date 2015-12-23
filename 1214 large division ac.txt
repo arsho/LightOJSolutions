@@ -1,0 +1,33 @@
+import java.util.*;
+import java.io.*;
+import java.math.*;
+import java.lang.*;
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc=new Scanner(System.in);
+        int cas;
+        cas=sc.nextInt();
+        int i;
+        BigInteger a,b;
+        for(i=1;i<=cas;i++)
+        {
+            a=sc.nextBigInteger();
+            b=sc.nextBigInteger();
+            if(a.compareTo(BigInteger.ZERO)<0)
+                a=a.multiply(BigInteger.valueOf(-1));
+            if(b.compareTo(BigInteger.ZERO)<0)
+                b=b.multiply(BigInteger.valueOf(-1));
+            if(a.mod(b).equals(BigInteger.ZERO))
+            {
+                System.out.println("Case "+i+": divisible");
+            }
+            else
+                System.out.println("Case "+i+": not divisible");
+        }
+    }
+}

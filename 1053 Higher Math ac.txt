@@ -1,0 +1,50 @@
+//1053 - Higher Math
+
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    int a,i,j;
+scanf("%d",&a);
+    long long int b[8];
+    for(i=1;i<=a;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%lld",&b[j]);
+        }
+        sort(b+0,b+3);
+        if(((b[0]*b[0])+(b[1]*b[1]))==(b[2]*b[2]))
+        printf("Case %d: yes\n",i);
+        else
+        printf("Case %d: no\n",i);
+    }
+
+    return 0;
+}

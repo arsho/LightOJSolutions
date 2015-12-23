@@ -1,0 +1,54 @@
+//1107 - How Cow
+
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+
+
+int main()
+
+{
+    int a,b,x,y,f,i,j,x1,x2,y1,y2;
+    scanf("%d",&a);
+    for(f=1;f<=a;f++)
+    {
+        scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+        scanf("%d",&b);
+        printf("Case %d:\n",f);
+        for(i=1;i<=b;i++)
+        {
+            scanf("%d%d",&x,&y);
+            if((x>x1&&x<x2)&&(y>y1&&y<y2))
+            printf("Yes\n");
+            else
+            printf("No\n");
+
+        }
+    }
+    return 0;
+}

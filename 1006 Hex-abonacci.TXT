@@ -1,0 +1,56 @@
+/*
+Problem  : LightOJ 1006 - Hex-a-bonacci
+Link     : http://www.lightoj.com/volume_showproblem.php?problem=1006
+Author   : arsho
+Date     : 05/09/2015
+Source   : C++
+CPU      : 0.008
+Memory   : 1688
+*/
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n, caseno = 0, cases;
+    int a, b, c, d, e, f;
+    scanf("%d", &cases);
+    while( cases-- )
+    {
+        scanf("%d %d %d %d %d %d %d", &a, &b, &c, &d, &e, &f, &n);
+        int ar[n+1];
+        ar[0]=a;
+        ar[1]=b;
+        ar[2]=c;
+        ar[3]=d;
+        ar[4]=e;
+        ar[5]=f;
+        for(int i=6; i<=n; i++)
+        {
+            // (a+b) % c = ((a%c) + (b%c))%c
+            ar[i]=(ar[i-6]%10000007+ar[i-5]%10000007+ar[i-4]%10000007+ar[i-3]%10000007+ar[i-2]%10000007+ar[i-1]%10000007)%10000007;
+        }
+        printf("Case %d: %d\n", ++caseno, ar[n]%10000007);
+    }
+    return 0;
+}
+/*
+5
+0 1 2 3 4 5 20
+3 2 1 5 0 1 9
+4 12 9 4 5 6 15
+9 8 7 6 5 4 3
+3 4 3 2 54 5 4
+
+Example:
+============
+Input:  3 2 1 5 0 1
+
+Simulation:
+============
+(3+2+1+5+0+1)   = 12 --> 3 2 1 5 0 1 12
+(2+1+5+0+1+12)  = 21 --> 3 2 1 5 0 1 12 21
+(1+5+0+1+12+21) = 40 --> 3 2 1 5 0 1 12 21 40
+(5+0+1+12+21+40)= 79 --> 3 2 1 5 0 1 12 21 40 79
+
+*/

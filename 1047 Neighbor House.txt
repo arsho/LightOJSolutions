@@ -1,0 +1,104 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define vi vector<int>
+#define  vl vector<long long>
+#define pdd pair<int, int>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<int, int>
+#define mod 1000000000
+#define pf first
+#define ps second
+#define vsort(v) sort(v.begin(), v.end())
+#define cas(a) printf("Case %d:",a)
+#define pb push_back
+
+int main()
+{
+        int te,k;
+        scanf("%d",&te);
+        
+        for(k=1;k<=te;k++)
+        {
+        int minimum=30000,min,i,j,row,col,l;
+
+        scanf("%d",&row);
+
+
+        int a[row][3],sum[row][3];
+
+        for(i=0;i<row   ;i++)
+        {
+                for(j=0;j<3;j++)
+                scanf("%d",&a[i][j]);
+        }
+
+        for(i=0;i<1;i++)
+        {
+                for(j=0;j<3;j++)
+                sum[i][j]=a[i][j];
+        }
+        for(i=0;i<row;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        min=30000;
+                        for(l=0;l<3;l++)
+                        {
+                                if(l<0||l>2)
+                                continue;
+                                if((sum[i][l]<min)&&(j!=l))
+                                min=sum[i][l];
+                        }
+                        sum[i+1][j]=a[i+1][j]+min;
+
+                }
+
+        }
+
+        for(i=row-1;i<row;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                      if(sum[i][j]<minimum)
+                        minimum=sum[i][j];
+
+                }
+        }
+        printf("Case %d: %d\n",k,minimum);
+}
+      return 0;
+
+}

@@ -1,0 +1,76 @@
+//1249 - Chocolate Thief
+
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+struct thief
+    {
+        char name[30];
+        long long v;
+    }tkd[103];
+int main()
+{
+    thief tk[105];
+    long long jl,lm,ki,max,min,m,a,b,i,k,j,l,h,w;
+    scanf("%lld",&a);
+    for(i=1;i<=a;i++)
+    {
+ki=0;
+m=0;
+        scanf("%lld",&b);
+        for(jl=0;jl<b;jl++)
+        {
+            scanf("%s%lld%lld%lld",&tk[jl].name,&l,&h,&w);
+            tk[jl].v=l*h*w;
+        }
+        max=tk[0].v;
+        min=tk[0].v;
+
+        for(j=0;j<b;j++)
+        {
+            if(tk[j].v>max)
+            {
+                max=tk[j].v;
+                ki=j;
+            }
+        }
+        for(lm=0;lm<b;lm++)
+        {
+            if(tk[lm].v<min)
+            {
+                min=tk[lm].v;
+                m=lm;
+            }
+        }
+        if(max>min)
+        printf("Case %lld: %s took chocolate from %s\n",i,tk[ki].name,tk[m].name);
+        else
+        printf("Case %lld: no thief\n",i);
+    }
+    return 0;
+}

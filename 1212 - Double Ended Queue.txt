@@ -1,0 +1,73 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+        int cas,t;
+        cin>>cas;
+        for(t=1;t<=cas;t++)
+        {
+                int tmp,n,m,ar[305],i,j,sum=0,sz=0,cntlft=100,cntr8=101;
+                string s,qfull="The queue is full",qempty="The queue is empty";
+                cout<<"Case "<<t<<":"<<endl;
+                for(i=0;i<305;i++)
+                {
+                        ar[i]=-1000;
+                }
+                cin>>n>>m;
+                for(i=0;i<m;i++)
+                {
+                        cin>>s;
+                        if(s=="pushLeft")
+                        {
+                                cin>>tmp;
+                                if(sz>=n)
+                                        cout<<qfull<<endl;
+                                else
+                                {
+                                        ar[cntlft]=tmp;
+                                        cntlft--;
+                                        sz++;
+                                        cout<<"Pushed in left: "<<tmp<<endl;
+                                }
+                        }
+                        else if(s=="pushRight")
+                        {
+                                cin>>tmp;
+                                if(sz>=n)
+                                        cout<<qfull<<endl;
+                                else
+                                {
+                                        ar[cntr8]=tmp;
+                                        cntr8++;
+                                        sz++;
+                                        cout<<"Pushed in right: "<<tmp<<endl;
+                                }
+                        }
+                        else if(s=="popLeft")
+                        {
+                                if(sz<=0)
+                                        cout<<qempty<<endl;
+                                else
+                                {
+                                        cntlft++;
+                                        sz--;
+                                        tmp=ar[cntlft];
+                                        cout<<"Popped from left: "<<tmp<<endl;
+                                }
+                        }
+                        else if(s=="popRight")
+                        {
+                                if(sz<=0)
+                                        cout<<qempty<<endl;
+                                else
+                                {
+                                        cntr8--;
+                                        sz--;
+                                        tmp=ar[cntr8];
+                                        cout<<"Popped from right: "<<tmp<<endl;
+                                }
+                        }
+                }
+        }
+        return 0;
+}

@@ -1,0 +1,34 @@
+#include <cstdio>
+#include <algorithm>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+main()
+{
+    int n,i,j,a,b,cas,t,m,c,d;
+    scanf("%d",&cas);
+    for(t=1; t<=cas; t++)
+    {
+        vector<int>v;
+        vector<int>::iterator ub,lb;
+        scanf("%d%d",&n,&m);
+        for(i=0; i<n; i++)
+        {
+            scanf("%d",&a);
+            v.push_back(a);
+        }
+        printf("Case %d:\n",t);
+        for(i=0; i<m; i++)
+        {
+            scanf("%d%d",&a,&b);
+            ub=upper_bound(v.begin(),v.end(),b);
+            lb=lower_bound(v.begin(),v.end(),a);
+            c=(ub-v.begin());
+            d=(lb-v.begin());
+            int ans=c-d;
+            printf("%d\n",ans);
+        }
+    }
+    return 0;
+}

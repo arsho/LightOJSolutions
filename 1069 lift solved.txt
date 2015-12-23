@@ -1,0 +1,63 @@
+//1069 - Lift
+
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    long long int a,b,c,d,e,f,g,h,i,j;
+    while(scanf("%lld",&a)==1)
+    {
+        for(i=1;i<=a;i++)
+        {
+            scanf("%lld%lld",&b,&c);
+            if(c>b)
+            {
+                d=((c-b)*4);
+                e=(b*4);
+                f=d+e+19;
+            }
+            else if(c<b)
+            {
+
+                d=((b-c)*4);
+                e=(b*4);
+                f=d+e+19;
+
+            }
+            else
+            {
+                d=(c*4);
+                f=d+19;
+            }
+            printf("Case %lld: %lld\n",i,f);
+
+        }
+    }
+    return 0;
+}

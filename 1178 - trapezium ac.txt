@@ -1,0 +1,46 @@
+//1178 - Trapezium
+
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    double a,b,c,d,e,f,g,h,res;
+    int i,j,t;
+    scanf("%d",&t);
+    for(i=1;i<=t;i++)
+    {
+        scanf("%lf%lf%lf%lf",&a,&c,&b,&d);
+        e=sqrt((-a+b+c+d)*(a-b+c+d)*(a-b-c+d)*(a-b+c-d));
+        f=2*fabs(a-b);
+        h=e/f;
+        res=0.5*(a+b)*h;
+        printf("Case %d: %.10lf\n",i,res);
+    }
+    return 0;
+}

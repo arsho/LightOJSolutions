@@ -1,0 +1,58 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+
+int main()
+{
+    long long int a,b,c,var,num,res,i,sho;
+    scanf("%lld",&a);
+    {
+        for(i=1; i<=a; i++)
+        {
+            scanf("%lld%lld",&b,&c);
+
+            res=1;
+            sho=c;
+            while(1)
+            {
+                if (sho < b)
+                    {sho=sho*10+c;
+                     res = res + 1;}
+                var = sho % b;
+                if( var == 0)
+                    break ;
+                else
+                    sho=var;
+            }
+            printf("Case %lld: %lld\n",i,res);
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,23 @@
+//1015 - Brush (I)
+
+#include<cstdio>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int t,a,b,c[1000],d,i,j;
+    scanf("%d",&t);
+    for(i=1;i<=t;i++)
+    {
+        d=0;
+        scanf("%d",&a);
+        for(j=0;j<a;j++)
+        {
+            scanf("%d",&c[j]);
+            if(c[j]>0)
+            d+=c[j];
+        }
+        printf("Case %d: %d\n",i,d);
+    }
+    return 0;
+}

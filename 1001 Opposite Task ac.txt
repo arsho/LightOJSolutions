@@ -1,0 +1,19 @@
+//1001 - Opposite Task
+
+
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int a,b,c,d,e,f,g,h,i,j;
+    scanf("%d",&a);
+    for(i=1;i<=a;i++)
+    {
+        scanf("%d",&b);
+        if(b>10)
+        printf("%d 10\n",b-10);
+        else
+        printf("%d 0\n",b);
+    }
+    return 0;
+}

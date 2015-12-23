@@ -1,0 +1,56 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+        char line[12];
+        int s,a,i,j,t,k;
+        scanf("%d",&t);
+        getchar();
+        for(k=1;k<=t;k++)
+        {
+                s=0;
+                gets(line);
+                a=strlen(line);
+                for(i=0,j=a-1;i<a,j>=0;i++,j--)
+                {
+                       if(line[i]==line[j])
+                       continue;
+                       else
+                       {
+                               s++;
+                               break;
+                       }
+                }
+                if(s==0)
+                printf("Case %d: Yes\n",k);
+                else
+                printf("Case %d: No\n",k);
+        }
+        return 0;
+}

@@ -1,0 +1,55 @@
+//1116 - Ekka Dokka
+
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    int test,i,j;
+    long long a,b,c,d,e,f,g,h;
+    while(scanf("%d",&test)==1)
+    {
+        for(i=1;i<=test;i++)
+        {
+            scanf("%lld",&a);
+            if(a%2!=0)
+            printf("Case %d: Impossible\n",i);
+            else
+            {
+                b=1;
+                while(a%2==0)
+                {
+                    b*=2;
+                    a=a/2;
+                }
+                printf("Case %d: %lld %lld\n",i,a,b);
+            }
+        }
+    }
+    return 0;
+}
